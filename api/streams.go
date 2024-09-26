@@ -571,6 +571,7 @@ type StreamSourceInfo struct {
 	Lag               uint64                   `json:"lag" yaml:"lag"`
 	Active            time.Duration            `json:"active" yaml:"active"`
 	Error             *ApiError                `json:"error,omitempty" yaml:"error"`
+	FilterTime        *time.Duration           `json:"filter_time,omitempty" yaml:"filter_time"`
 	FilterSubject     string                   `json:"filter_subject,omitempty" yaml:"filter_subject"`
 	SubjectTransforms []SubjectTransformConfig `json:"subject_transforms,omitempty" yaml:"subject_transforms"`
 }
@@ -588,6 +589,7 @@ type StreamSource struct {
 	Name              string                   `json:"name" yaml:"name"`
 	OptStartSeq       uint64                   `json:"opt_start_seq,omitempty" yaml:"opt_start_seq"`
 	OptStartTime      *time.Time               `json:"opt_start_time,omitempty" yaml:"opt_start_time"`
+	FilterTime        *time.Duration           `json:"filter_time,omitempty" yaml:"filter_time"`
 	FilterSubject     string                   `json:"filter_subject,omitempty" yaml:"filter_subject"`
 	External          *ExternalStream          `json:"external,omitempty" yaml:"external"`
 	SubjectTransforms []SubjectTransformConfig `json:"subject_transforms,omitempty" yaml:"subject_transforms"`
